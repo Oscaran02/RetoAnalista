@@ -20,12 +20,12 @@ public class createAccountStepDefinitions {
     public void iAmOnTheHomePage() {
         OnStage.theActorCalled("Oscar").wasAbleTo(OpenUp.thePage());
     }
-    @When("I click on the Join today link")
-    public void iClickOnTheJoinTodayLink() {
+    @When("I fill register form")
+    public void iFillRegisterForm() {
         OnStage.theActorInTheSpotlight().attemptsTo(Register.onThePage());
     }
-    @Then("I should see the Create an account page")
-    public void iShouldSeeTheCreateAnAccountPage() {
+    @Then("I should see the Created account page")
+    public void iShouldSeeTheCreatedAccountPage() {
 
     }
 }

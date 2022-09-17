@@ -6,5 +6,5 @@
     @scenario1
     Scenario: Create an account.
       Given I am on the home page
-      When I click on the Join today link
-      Then I should see the Create an account page
+      When I fill register form
+      Then I should see the Created account page
