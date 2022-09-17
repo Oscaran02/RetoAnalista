@@ -1,6 +1,7 @@
 package co.com.choucair.retoanalista.stepdefinitions;
 
 import co.com.choucair.retoanalista.tasks.OpenUp;
+import co.com.choucair.retoanalista.tasks.Register;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,7 +22,7 @@ public class createAccountStepDefinitions {
     }
     @When("I click on the Join today link")
     public void iClickOnTheJoinTodayLink() {
-
+        OnStage.theActorInTheSpotlight().attemptsTo(Register.onThePage());
     }
     @Then("I should see the Create an account page")
     public void iShouldSeeTheCreateAnAccountPage() {
