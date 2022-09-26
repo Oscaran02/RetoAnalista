@@ -32,9 +32,6 @@ public class createAccountStepDefinitions {
     }
     @Then("I should see the Created account page")
     public void iShouldSeeTheCreatedAccountPage() {
-        WebDriver driver = getDriver();
-        String question = driver.getCurrentUrl();
-        System.out.println(question);
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe("Welcome to the world's largest community of freelance software testers!")));
     }
 }

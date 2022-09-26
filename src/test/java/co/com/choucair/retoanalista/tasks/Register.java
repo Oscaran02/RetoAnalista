@@ -29,7 +29,7 @@ public class Register implements Task {
                 WaitUntil.the(PersonalInformationPage.INPUT_FIRST_NAME, isVisible()).forNoMoreThan(30).seconds(),
                 Enter.theValue("Oscar").into(PersonalInformationPage.INPUT_FIRST_NAME),
                 Enter.theValue("Pacheco").into(PersonalInformationPage.INPUT_LAST_NAME),
-                Enter.theValue("thisIsNotAnAccount6@gmail.com").into(PersonalInformationPage.INPUT_EMAIL),
+                Enter.theValue("thisIsNotAnAccount7@gmail.com").into(PersonalInformationPage.INPUT_EMAIL),
                 Select.optionNumber(1).from(PersonalInformationPage.SELECT_MONTH),
                 Select.optionNumber(1).from(PersonalInformationPage.SELECT_DAY),
                 Select.optionNumber(1).from(PersonalInformationPage.SELECT_YEAR),

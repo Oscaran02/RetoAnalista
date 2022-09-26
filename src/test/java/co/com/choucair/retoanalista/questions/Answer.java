@@ -39,11 +39,11 @@ public class Answer implements Question<Boolean> {
             result = Visibility.of(DevicesPage.HEADER_DEVICES).answeredBy(actor);
         } else if (question.contains("Last Step")) {
             result = Visibility.of(LastStepPage.HEADER_LAST_STEP).answeredBy(actor);
-        } else if (question.contains("Welcome to the world")) {
-            result = Visibility.of(Target.the("Welcome to the world").locatedBy(SUCCESSFUL_MESSAGE)).answeredBy(actor);
+        } else if (question.contains("Welcome to the world's largest community of freelance software testers!")) {
+            result = Visibility.of(Target.the(question).locatedBy(SUCCESSFUL_MESSAGE)).answeredBy(actor);
         } else {
             result = false;
         }
-        return !result;
+        return result;
     }
 }
