@@ -1,12 +1,19 @@
 package co.com.choucair.retoanalista.questions;
 
+import co.com.choucair.retoanalista.userinterface.WelcomePage;
+import co.com.choucair.retoanalista.userinterface.AddressPage;
+import co.com.choucair.retoanalista.userinterface.DevicesPage;
+import co.com.choucair.retoanalista.userinterface.LastStepPage;
+import co.com.choucair.retoanalista.userinterface.PersonalInformationPage;
+
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.TextContent;
 import net.serenitybdd.screenplay.questions.Visibility;
 import net.serenitybdd.screenplay.targets.Target;
-import net.serenitybdd.screenplay.Actor;
 
 import static co.com.choucair.retoanalista.userinterface.Page.*;
+import static co.com.choucair.retoanalista.userinterface.SuccessfulPage.SUCCESSFUL_MESSAGE;
 
 public class Answer implements Question<Boolean> {
     private String question;
@@ -22,12 +29,21 @@ public class Answer implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean result;
-        String question = "Welcome to the world's largest community for freelance software testers!"; //TextContent.of(TITLE).viewedBy(actor).asString();
-        if (question.equals("Welcome to the world's largest community for freelance software testers!")) {
-            result = true;
+        if (question.contains("Welcome")) {
+            result = Visibility.of(WelcomePage.HEADER_WELCOME).answeredBy(actor);
+        } else if (question.contains("Your personal information")) {
+            result = Visibility.of(PersonalInformationPage.HEADER_PERSONAL_INFORMATION).answeredBy(actor);
+        } else if (question.contains("Your address")) {
+            result = Visibility.of(AddressPage.HEADER_ADDRESS).answeredBy(actor);
+        } else if (question.contains("Devices")) {
+            result = Visibility.of(DevicesPage.HEADER_DEVICES).answeredBy(actor);
+        } else if (question.contains("Last Step")) {
+            result = Visibility.of(LastStepPage.HEADER_LAST_STEP).answeredBy(actor);
+        } else if (question.contains("Welcome to the world")) {
+            result = Visibility.of(Target.the("Welcome to the world").locatedBy(SUCCESSFUL_MESSAGE)).answeredBy(actor);
         } else {
             result = false;
         }
-        return result;
+        return !result;
     }
 }
