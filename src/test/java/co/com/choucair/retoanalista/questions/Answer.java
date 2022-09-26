@@ -1,18 +1,11 @@
 package co.com.choucair.retoanalista.questions;
 
-import co.com.choucair.retoanalista.userinterface.WelcomePage;
-import co.com.choucair.retoanalista.userinterface.AddressPage;
-import co.com.choucair.retoanalista.userinterface.DevicesPage;
-import co.com.choucair.retoanalista.userinterface.LastStepPage;
-import co.com.choucair.retoanalista.userinterface.PersonalInformationPage;
-
+import co.com.choucair.retoanalista.userinterface.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.TextContent;
 import net.serenitybdd.screenplay.questions.Visibility;
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.choucair.retoanalista.userinterface.Page.*;
 import static co.com.choucair.retoanalista.userinterface.SuccessfulPage.SUCCESSFUL_MESSAGE;
 
 public class Answer implements Question<Boolean> {
