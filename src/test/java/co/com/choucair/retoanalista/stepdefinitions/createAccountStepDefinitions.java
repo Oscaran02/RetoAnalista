@@ -10,6 +10,10 @@ import io.cucumber.java.Before;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.openqa.selenium.WebDriver;
+
+import static java.lang.Thread.sleep;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 
 public class createAccountStepDefinitions {
 
@@ -26,8 +30,11 @@ public class createAccountStepDefinitions {
     public void iFillRegisterForm() {
         OnStage.theActorInTheSpotlight().attemptsTo(Register.onThePage());
     }
-    @Then("^I should see the (.*) page$")
-    public void iShouldSeeTheCreatedAccountPage(String question) {
+    @Then("I should see the Created account page")
+    public void iShouldSeeTheCreatedAccountPage() {
+        WebDriver driver = getDriver();
+        String question = driver.getCurrentUrl();
+        System.out.println(question);
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
     }
 }

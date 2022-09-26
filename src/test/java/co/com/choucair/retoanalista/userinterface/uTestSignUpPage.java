@@ -23,8 +23,8 @@ public class uTestSignUpPage extends PageObject {
             .locatedBy("//input[@id='city']");
     public static final Target INPUT_ZIP = Target.the("where do we write the zip code")
             .locatedBy("//input[@id='zip']");
-    public static final Target SELECT_COUNTRY = Target.the("select the country")
-            .locatedBy("//select[@id='countryId']");
+    public static final Target INPUT_COUNTRY = Target.the("where do we write the country")
+            .locatedBy("//*[@id=\"regs_container\"]/div/div[2]/div/div[2]/div/form/div[1]/div[3]/div[1]/div[4]/div[2]/div/div/input[1]");
     public static final Target INPUT_COMPUTER = Target.the("where do we write the computer")
             .locatedBy("//input[@id='computer']");
     public static final Target INPUT_VERSION = Target.the("where do we write the version")
@@ -38,7 +38,7 @@ public class uTestSignUpPage extends PageObject {
     public static final Target INPUT_OPERATING_SYSTEM = Target.the("where do we write the operating system")
             .locatedBy("//input[@id='operatingSystem']");
     public static final Target LAST_NEXT_BUTTON = Target.the("button to move to the last page of the form")
-            .locatedBy("//a[@class='btn btn-blue pull-right']");
+            .locatedBy("//*[@class='btn btn-blue pull-right']");
     public static final Target INPUT_PASSWORD = Target.the("where do we write the password")
             .locatedBy("//input[@id='password']");
     public static final Target INPUT_CONFIRM_PASSWORD = Target.the("where do we write the password confirmation")
